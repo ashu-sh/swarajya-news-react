@@ -9,7 +9,9 @@ function Header() {
 
   return (
     <nav className="nav-bar">
-      <div className="logo">Logo</div>
+      <div className="logo">
+        <a style={{ color: "#ffa366", fontWeight: "600" }}>Swarajya</a> News
+      </div>
       <div className={Menu ? "show" : "nav-links"}>
         <a href="/">Home</a>
 
