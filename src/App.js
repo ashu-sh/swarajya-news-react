@@ -4,6 +4,8 @@ import Cardgrid from "./Componant/Cardgrid";
 import Header from "./Componant/Header";
 import Heading from "./Componant/Heading";
 import Source from "./Context/Source";
+import General from "./Componant/General";
+import Newsheading from "./Componant/Newsheading";
 
 function App() {
   return (
@@ -12,6 +14,9 @@ function App() {
         <Header />
         <Heading />
         <Cardgrid />
+        <br />
+        <Newsheading />
+        <General />
       </Source>
     </div>
   );

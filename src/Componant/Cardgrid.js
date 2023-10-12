@@ -19,7 +19,7 @@ function Cardgrid() {
           {news.slice(0, 1).map((res, i) => {
             return (
               <>
-                <div className="flex-container2">
+                <div className="flex-container2" key={i}>
                   <div
                     className="flex-item-main"
                     style={{
@@ -47,6 +47,7 @@ function Cardgrid() {
                       return (
                         <>
                           <div
+                            key={i}
                             className="flex-item-left"
                             style={{
                               backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(25,25,25,1) 100%),url(${res.urlToImage})`,
@@ -65,6 +66,7 @@ function Cardgrid() {
                     {news.slice(2, 3).map((res, i) => {
                       return (
                         <div
+                          key={i}
                           className="flex-item-right"
                           style={{
                             backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(25,25,25,1) 100%),url(${res.urlToImage})`,
@@ -82,6 +84,7 @@ function Cardgrid() {
                     {news.slice(3, 4).map((res, i) => {
                       return (
                         <div
+                          key={i}
                           className="flex-item-left"
                           style={{
                             backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(25,25,25,1) 100%),url(${res.urlToImage})`,
@@ -99,6 +102,7 @@ function Cardgrid() {
                     {news.slice(4, 5).map((res, i) => {
                       return (
                         <div
+                          key={i}
                           className="flex-item-left"
                           style={{
                             backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(25,25,25,1) 100%),url(${res.urlToImage})`,
