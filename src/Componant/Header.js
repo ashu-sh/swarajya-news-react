@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [Menu, showMenu] = useState(false);
@@ -22,11 +23,15 @@ function Header() {
         News
       </div>
       <div className={Menu ? "show" : "nav-links"}>
-        <a href="/">Home</a>
+        <Link to="/">
+          <a>Home</a>
+        </Link>
 
         <a href="/about">Entertainment</a>
 
-        <a href="/services">Sports</a>
+        <Link to="/Sports">
+          <a>Sports</a>
+        </Link>
 
         <a href="/contact">Videos</a>
       </div>

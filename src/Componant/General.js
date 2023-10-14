@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
+import { BiTrendingUp } from "react-icons/bi";
 
 function General() {
   const [data, setData] = useState([]);
@@ -21,42 +22,26 @@ function General() {
   return (
     <div className="flex-container-new">
       <div className="flex-container-four">
-        {data.slice(0, 1).map((res, k) => {
+        {data.slice(6, 9).map((res, k) => {
           return (
             <div
               className="flex-item-left-five"
               style={{
-                backgroundImage: `linear-gradient(0deg, rgba(255,255,255,1) 38%, rgba(254,254,254,0) 30%, rgba(255,255,255,0) 100%),url(${res.urlToImage})`,
+                backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(25,25,25,1) 100%),url(${res.urlToImage})`,
               }}
               key={k}
             >
+              <p className="source">
+                राज्य-देश&nbsp;
+                <a>
+                  <BiTrendingUp style={{ fontSize: "24px" }} />
+                </a>
+              </p>
               <p>{res.title}</p>
-            </div>
-          );
-        })}
-        {data.slice(1, 2).map((res, k) => {
-          return (
-            <div
-              className="flex-item-right-six"
-              style={{
-                backgroundImage: `linear-gradient(0deg, rgba(255,255,255,1) 38%, rgba(254,254,254,0) 30%, rgba(255,255,255,0) 100%),url(${res.urlToImage})`,
-              }}
-              key={k}
-            >
-              <p>{res.title}</p>
-            </div>
-          );
-        })}
-        {data.slice(2, 3).map((res, k) => {
-          return (
-            <div
-              className="flex-item-right-seven"
-              style={{
-                backgroundImage: `linear-gradient(0deg, rgba(255,255,255,1) 38%, rgba(254,254,254,0) 30%, rgba(255,255,255,0) 100%),url(${res.urlToImage})`,
-              }}
-              key={k}
-            >
-              <p>{res.title}</p>
+              <p className="source5">
+                <a style={{ color: "red" }}>|</a>{" "}
+                <a href={res.url}>{res.source.name}</a>
+              </p>
             </div>
           );
         })}

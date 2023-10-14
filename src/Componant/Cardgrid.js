@@ -16,7 +16,7 @@ function Cardgrid() {
         <ScaleLoader color="#36d7b7" />
       ) : (
         <div>
-          {news.slice(0, 1).map((res, i) => {
+          {news.slice(1, 2).map((res, i) => {
             return (
               <>
                 <div className="flex-container2" key={i}>
@@ -43,7 +43,7 @@ function Cardgrid() {
                     </p>
                   </div>
                   <div className="flex-container">
-                    {news.slice(1, 2).map((res, i) => {
+                    {news.slice(2, 3).map((res, i) => {
                       return (
                         <>
                           <div
@@ -63,7 +63,7 @@ function Cardgrid() {
                         </>
                       );
                     })}
-                    {news.slice(2, 3).map((res, i) => {
+                    {news.slice(3, 4).map((res, i) => {
                       return (
                         <div
                           key={i}
@@ -81,7 +81,7 @@ function Cardgrid() {
                         </div>
                       );
                     })}
-                    {news.slice(3, 4).map((res, i) => {
+                    {news.slice(4, 5).map((res, i) => {
                       return (
                         <div
                           key={i}
@@ -99,7 +99,7 @@ function Cardgrid() {
                         </div>
                       );
                     })}
-                    {news.slice(4, 5).map((res, i) => {
+                    {news.slice(5, 6).map((res, i) => {
                       return (
                         <div
                           key={i}
