@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import "./App.css";
 import Cardgrid from "./Componant/Cardgrid";
 import Header from "./Componant/Header";
@@ -9,6 +8,7 @@ import Newsheading from "./Componant/Newsheading";
 import International from "./Componant/International";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sports from "./Categories/Sports";
+import Entertainment from "./Categories/Entertainment";
 
 function App() {
   return (
@@ -32,6 +32,10 @@ function App() {
             <Route
               path="sports"
               element={[<Header />, <Heading />, <Sports />]}
+            />
+            <Route
+              path="Entertainment"
+              element={[<Header />, <Heading />, <Entertainment />]}
             />
           </Routes>
         </BrowserRouter>

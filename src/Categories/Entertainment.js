@@ -1,26 +1,28 @@
 import axios from "axios";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BiTrendingUp } from "react-icons/bi";
-function Sports() {
-  const [sportsData, setSportsData] = useState([]);
-  const sideEffect = useRef(false);
+
+function Entertainment() {
+  const [Entertainment, setEntertainment] = useState([]);
+  const sideEffects = useRef(false);
+
   useEffect(() => {
-    if (sideEffect.current === false) {
+    if (sideEffects.current === false) {
       axios
         .get(
-          "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=97c1e55e6b5d4a869642a140876c9327"
+          "https://newsapi.org/v2/everything?q=bollywood&domains=indiatimes.com&apiKey=97c1e55e6b5d4a869642a140876c9327"
         )
-        .then((response) => setSportsData(response.data.articles))
-        .catch((error) => {
-          console.log(error);
+        .then((response) => setEntertainment(response.data.articles))
+        .catch(() => {
+          console.log("error");
         });
-      sideEffect.current = true;
+      sideEffects.current = true;
     }
   }, []);
   return (
     <div className="flex-container-new">
       <div className="flex-container-four">
-        {sportsData.map((res, k) => {
+        {Entertainment.slice(4).map((res, k) => {
           return (
             <div
               className="flex-item-left-five"
@@ -30,7 +32,7 @@ function Sports() {
               key={k}
             >
               <p className="source">
-                Sports Trending&nbsp;&nbsp;
+                Entertainment Trending&nbsp;&nbsp;
                 <a>
                   <BiTrendingUp style={{ fontSize: "24px" }} />
                 </a>
@@ -48,4 +50,4 @@ function Sports() {
   );
 }
 
-export default Sports;
+export default Entertainment;
