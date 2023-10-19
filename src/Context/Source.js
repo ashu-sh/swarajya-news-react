@@ -19,7 +19,7 @@ function Source({ children }) {
           setloader(false);
         })
         .catch(() => {
-          document.write("Network Error !");
+          document.write(`<h2>Please Check Your Internet Connection !</h2>`);
           setloader(true);
         });
 
