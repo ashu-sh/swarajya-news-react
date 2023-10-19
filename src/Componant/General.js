@@ -9,7 +9,7 @@ function General() {
     if (sideEffect.current === false) {
       axios
         .get(
-          "https://newsapi.org/v2/everything?domains=maharashtratimes.com&apiKey=97c1e55e6b5d4a869642a140876c9327"
+          "https://newsapi.org/v2/everything?domains=maharashtratimes.com&apiKey=851e34b2bb3940ecbb427f5977754782"
         )
         .then((response) => {
           setData(response.data.articles);

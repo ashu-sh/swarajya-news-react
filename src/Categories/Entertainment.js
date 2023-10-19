@@ -10,7 +10,7 @@ function Entertainment() {
     if (sideEffects.current === false) {
       axios
         .get(
-          "https://newsapi.org/v2/everything?q=bollywood&domains=indiatimes.com&apiKey=97c1e55e6b5d4a869642a140876c9327"
+          "https://newsapi.org/v2/everything?q=bollywood&domains=indiatimes.com&apiKey=851e34b2bb3940ecbb427f5977754782"
         )
         .then((response) => setEntertainment(response.data.articles))
         .catch(() => {

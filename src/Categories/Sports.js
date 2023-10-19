@@ -8,7 +8,7 @@ function Sports() {
     if (sideEffect.current === false) {
       axios
         .get(
-          "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=97c1e55e6b5d4a869642a140876c9327"
+          "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=851e34b2bb3940ecbb427f5977754782"
         )
         .then((response) => setSportsData(response.data.articles))
         .catch((error) => {
