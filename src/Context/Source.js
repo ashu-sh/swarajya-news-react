@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Channel } from "./Channel";
+import Preloader from "../Componant/Preloader";
 
 function Source({ children }) {
   const [news, getNews] = useState([]);
+  const [loader, setloader] = useState(true);
   const sideEffect = useRef(false);
 
   useEffect(() => {
@@ -14,9 +16,11 @@ function Source({ children }) {
         )
         .then((response) => {
           getNews(response.data.articles);
+          setloader(false);
         })
         .catch(() => {
-          document.write("Server Not Found !");
+          document.write("Network Error !");
+          setloader(true);
         });
 
       sideEffect.current = true;
@@ -25,7 +29,11 @@ function Source({ children }) {
 
   return (
     <div>
-      <Channel.Provider value={[news, getNews]}>{children}</Channel.Provider>
+      {loader ? (
+        <Preloader />
+      ) : (
+        <Channel.Provider value={[news, getNews]}>{children}</Channel.Provider>
+      )}
     </div>
   );
 }

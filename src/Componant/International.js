@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { BiTrendingUp } from "react-icons/bi";
+
 function International() {
   const [data, setData] = useState([]);
   const sideEffect = useRef(false);
@@ -8,7 +9,7 @@ function International() {
     if (sideEffect.current === false) {
       axios
         .get(
-          "https://newsapi.org/v2/top-headlines?q=international&apiKey=851e34b2bb3940ecbb427f5977754782"
+          "https://newsapi.org/v2/everything?domains=ndtv.com&apiKey=851e34b2bb3940ecbb427f5977754782"
         )
         .then((response) => {
           setData(response.data.articles);
